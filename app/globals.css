@@ -2,26 +2,49 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+/* Clerk Auth forms */
+.cl-formButtonPrimary {
+  @apply bg-purple-1;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+.cl-formButtonPrimary:hover {
+  @apply bg-pink-1;
+}
+
+.cl-footerActionLink {
+  @apply text-purple-1;
+}
+
+.cl-footerActionLink:hover {
+  @apply text-pink-1;
+}
+
+@layer utilities {
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 3px;
+    height: 3px;
+    border-radius: 2px;
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+/* Profile Info */
+.profile-input {
+  @apply  bg-dark-1 p-2.5 rounded-lg border-none focus:outline-none mt-3 text-light-1
+}
+
+/* Top Bar */
+.search-bar {
+  @apply w-full bg-dark-2 py-3 px-5 rounded-lg focus:outline-none text-light-1 text-small-semibold
+}
+.create-post-btn {
+  @apply flex items-center gap-2 rounded-lg py-2.5 px-3 bg-gradient-to-l from-pink-1 to-purple-1 text-light-1 text-small-semibold max-md:hidden
+}
+
+.search-icon {
+  @apply absolute top-2 right-2 text-light-1 cursor-pointer hover:text-pink-1
+}
+
+/* Tabs */
+.tab {
+  @apply px-4 py-2 rounded-lg text-light-1 text-small-bold
 }
