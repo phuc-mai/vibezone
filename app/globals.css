@@ -28,7 +28,7 @@
 }
 
 /* Profile Info */
-.profile-input {
+.input {
   @apply  bg-dark-1 p-2.5 rounded-lg border-none focus:outline-none mt-3 text-light-1
 }
 

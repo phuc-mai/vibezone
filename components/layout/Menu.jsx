@@ -1,3 +1,5 @@
+"use client";
+
 import { sidebarLinks } from "@constants";
 import Link from "next/link";
 import { usePathname } from "next/navigation";

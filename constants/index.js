@@ -1,9 +1,9 @@
 import {
   Home,
   AddPhotoAlternateOutlined,
-  Search,
   GroupOutlined,
-  ManageAccountsOutlined,
+  BookmarksOutlined,
+  FavoriteBorder,
 } from "@mui/icons-material";
 
 export const sidebarLinks = [
@@ -23,9 +23,14 @@ export const sidebarLinks = [
     label: "People",
   },
   {
-    icon: <ManageAccountsOutlined sx={{ color: "white", fontSize: "26px" }} />,
-    route: "/edit-profile",
-    label: "Edit Profile",
+    icon: <BookmarksOutlined sx={{ color: "white", fontSize: "26px" }} />,
+    route: "/saved-posts",
+    label: "Saved Posts",
+  },
+  {
+    icon: <FavoriteBorder sx={{ color: "white", fontSize: "26px" }} />,
+    route: "/liked-posts",
+    label: "Liked Posts",
   },
 ];
 
@@ -50,20 +55,24 @@ export const pageTitles = [
     url: "/search", 
     title: "Search",
   },
+  {
+    url: "/search", 
+    title: "Search",
+  },
+  {
+    url: "/saved-posts",
+    title: "Saved Posts",
+  },
+  {
+    url: "/liked-posts",
+    title: "Liked Posts",
+  }
 ];
 
 export const tabs = [
   {
     link: "posts",
     name: "Posts",
-  },
-  {
-    link: "liked-posts",
-    name: "Liked Posts",
-  },
-  {
-    link: "saved-posts",
-    name: "Saved Posts",
   },
   {
     link: "followers",
