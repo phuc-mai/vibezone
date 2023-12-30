@@ -1,14 +1,7 @@
 "use client";
 
-import {
-  SignOutButton,
-  SignedIn,
-  UserButton,
-  useClerk,
-  useUser,
-} from "@clerk/nextjs";
+import { UserButton, useUser } from "@clerk/nextjs";
 import { dark } from "@clerk/themes";
-import { Logout } from "@mui/icons-material";
 import Image from "next/image";
 import Link from "next/link";
 import Menu from "./Menu";
@@ -16,8 +9,6 @@ import { useEffect, useState } from "react";
 import Loader from "@components/Loader";
 
 const LeftSideBar = () => {
-  const { signOut } = useClerk();
-
   const { user, isLoaded } = useUser();
 
   const [loading, setLoading] = useState(true);
@@ -86,16 +77,6 @@ const LeftSideBar = () => {
         <UserButton appearance={{ baseTheme: dark }} />
         <p className="text-light-1 text-body-bold">Manage Account</p>
       </div>
-
-      {/* Clerk Docs for Sign Out Button - https://clerk.com/docs/components/unstyled/sign-out-button#sign-out-button */}
-      <SignedIn>
-        <SignOutButton signOutCallback={() => signOut()}>
-          <div className="flex cursor-pointer gap-4 items-center">
-            <Logout sx={{ color: "white", fontSize: "32px" }} />
-            <p className="text-body-bold text-light-1">Log Out</p>
-          </div>
-        </SignOutButton>
-      </SignedIn>
     </div>
   );
 };
