@@ -65,15 +65,4 @@ export const POST = async (req, { params }) => {
   }
 };
 
-export const DELETE = async (req, { params }) => {
-  try {
-    await connectToDB();
 
-    await Post.findByIdAndDelete(params.id);
-
-    return new Response("Post is deleted", { status: 200 });
-  } catch (err) {
-    console.error(err);
-    return new Response("Failed to delete the post", { status: 500 });
-  }
-}
