@@ -62,7 +62,7 @@ const TopBar = () => {
           <Person sx={{ fontSize: "35px", color: "white" }} />
         </Link>
 
-        <UserButton appearance={{ baseTheme: dark }} />
+        <UserButton appearance={{ baseTheme: dark }} afterSignOutUrl="/sign-in" />
       </div>
     </div>
   );
